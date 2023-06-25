@@ -23,5 +23,4 @@ from recency
 where last_altered < {{ dbt.dateadd(datepart="seconds", interval=-1 * stale_after_seconds,
 									from_date_or_timestamp=dbt.current_timestamp()) }}
 
-
 {% endmacro %}
